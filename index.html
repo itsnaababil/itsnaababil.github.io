@@ -1,0 +1,486 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title>Undangan Pernikahan ababil & nadia</title>
+    <meta
+      name="description"
+      content="Dengan bahagia kami mengundang Anda di hari pernikahan kami."
+    />
+    <link
+      rel="preconnect"
+      href="https://maps.app.goo.gl/TWCeKZZFF1WVfbWM8?g_st=ac"
+    />
+    <link
+      rel="preconnect"
+      href=" https://maps.app.goo.gl/TWCeKZZFF1WVfbWM8?g_st=ac"
+    />
+    <link
+      href="https://maps.app.goo.gl/TWCeKZZFF1WVfbWM8?g_st=ac"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --putih: #ffffff;
+        --blush: #f9dce3;
+        --mawar: #e899ae;
+        --mawar-tua: #a3405f;
+        --tinta: #4b2733;
+        --script: "Pinyon Script", "Brush Script MT", cursive;
+        --serif: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+      }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html,
+      body {
+        height: 100%;
+      }
+      body {
+        font-family: var(--serif);
+        color: var(--tinta);
+        background: var(--blush);
+        overflow: hidden;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      /* ---------- Rangkaian slide ---------- */
+      .track {
+        display: flex;
+        height: 100%;
+        width: 300%;
+        transition: transform 0.7s cubic-bezier(0.65, 0.05, 0.25, 1);
+      }
+      .slide {
+        width: calc(100% / 3);
+        height: 100%;
+        display: grid;
+        place-items: center;
+        padding: max(24px, env(safe-area-inset-top)) 20px
+          max(88px, calc(env(safe-area-inset-bottom) + 72px));
+        background:
+          radial-gradient(
+            circle at 15% 10%,
+            rgba(255, 255, 255, 0.7) 0 90px,
+            transparent 91px
+          ),
+          radial-gradient(
+            circle at 88% 92%,
+            rgba(232, 153, 174, 0.35) 0 140px,
+            transparent 141px
+          ),
+          var(--blush);
+      }
+
+      /* Bingkai lengkung: elemen utama desain */
+      .arch {
+        position: relative;
+        width: min(420px, 100%);
+        height: min(680px, 100%);
+        background: var(--putih);
+        border-radius: 999px 999px 18px 18px;
+        padding: 18% 30px 36px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        box-shadow: 0 30px 60px -30px rgba(163, 64, 95, 0.45);
+        overflow: hidden;
+      }
+      .arch::before {
+        content: "";
+        position: absolute;
+        inset: 10px;
+        border: 1px solid var(--mawar);
+        border-radius: inherit;
+        pointer-events: none;
+      }
+
+      .bunga {
+        width: 120px;
+        height: auto;
+        margin-bottom: 10px;
+      }
+
+      .kecil {
+        font-size: 1.05rem;
+        letter-spacing: 0.02em;
+        line-height: 1.6;
+      }
+      .nama {
+        font-family: var(--script);
+        font-weight: 400;
+        color: var(--mawar-tua);
+        line-height: 0.95;
+        font-size: clamp(3.4rem, 15vw, 4.6rem);
+        margin: 14px 0 6px;
+      }
+      .nama span {
+        display: block;
+        font-size: 0.55em;
+        color: var(--mawar);
+        margin: 4px 0;
+      }
+      .tanggal {
+        font-size: 1.25rem;
+        font-weight: 500;
+        margin-top: 14px;
+      }
+      .tamu {
+        margin-top: 26px;
+        font-size: 1rem;
+        font-style: italic;
+      }
+      .tamu strong {
+        display: block;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 1.3rem;
+        color: var(--mawar-tua);
+        margin-top: 2px;
+      }
+
+      h2 {
+        font-family: var(--script);
+        font-weight: 400;
+        font-size: 2.8rem;
+        color: var(--mawar-tua);
+        line-height: 1;
+        margin-bottom: 18px;
+      }
+      .acara {
+        width: 100%;
+      }
+      .acara + .acara {
+        margin-top: 18px;
+        padding-top: 18px;
+        border-top: 1px solid var(--blush);
+      }
+      .acara h3 {
+        font-size: 1.45rem;
+        font-weight: 600;
+        color: var(--tinta);
+        margin-bottom: 2px;
+      }
+      .acara p {
+        font-size: 1.08rem;
+        line-height: 1.5;
+      }
+      .lokasi {
+        margin-top: 18px;
+        font-size: 1.05rem;
+        line-height: 1.5;
+      }
+      .lokasi strong {
+        font-weight: 600;
+        display: block;
+      }
+
+      .tombol {
+        display: inline-block;
+        margin-top: 16px;
+        padding: 11px 26px;
+        border-radius: 999px;
+        background: var(--mawar-tua);
+        color: var(--putih);
+        font-family: var(--serif);
+        font-size: 1.05rem;
+        font-weight: 600;
+        text-decoration: none;
+        border: none;
+        cursor: pointer;
+        transition: background 0.2s;
+      }
+      .tombol:hover {
+        background: var(--tinta);
+      }
+      .tombol.garis {
+        background: transparent;
+        color: var(--mawar-tua);
+        border: 1px solid var(--mawar-tua);
+      }
+      .tombol.garis:hover {
+        background: var(--blush);
+      }
+
+      .doa {
+        font-style: italic;
+        font-size: 1.12rem;
+        line-height: 1.65;
+        max-width: 30ch;
+      }
+      .tanda {
+        margin-top: 22px;
+        font-size: 1rem;
+      }
+      .tanda .nama {
+        font-size: 2.6rem;
+        margin: 6px 0 0;
+      }
+
+      /* ---------- Navigasi ---------- */
+      .nav {
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: max(18px, env(safe-area-inset-bottom));
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 18px;
+      }
+      .panah {
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        border: 1px solid var(--mawar-tua);
+        background: var(--putih);
+        color: var(--mawar-tua);
+        font-size: 1.3rem;
+        cursor: pointer;
+        display: grid;
+        place-items: center;
+      }
+      .panah:disabled {
+        opacity: 0.35;
+        cursor: default;
+      }
+      .titik {
+        display: flex;
+        gap: 8px;
+      }
+      .titik button {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        border: 1px solid var(--mawar-tua);
+        background: transparent;
+        cursor: pointer;
+        transition:
+          width 0.3s,
+          background 0.3s;
+      }
+      .titik button[aria-current="true"] {
+        width: 26px;
+        border-radius: 6px;
+        background: var(--mawar-tua);
+      }
+
+      button:focus-visible,
+      a:focus-visible {
+        outline: 2px solid var(--tinta);
+        outline-offset: 3px;
+      }
+
+      /* Satu momen animasi: nama muncul saat dibuka */
+      .muncul {
+        animation: muncul 1.4s ease-out both;
+      }
+      @keyframes muncul {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
+          letter-spacing: 0.08em;
+        }
+        to {
+          opacity: 1;
+          transform: none;
+          letter-spacing: normal;
+        }
+      }
+
+      @media (max-height: 640px) {
+        .bunga {
+          width: 80px;
+        }
+        .arch {
+          padding-top: 14%;
+        }
+        .nama {
+          font-size: 3rem;
+        }
+        h2 {
+          font-size: 2.3rem;
+          margin-bottom: 10px;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .track {
+          transition: none;
+        }
+        .muncul {
+          animation: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="track" id="track">
+      <!-- Slide 1: Sampul -->
+      <section class="slide" aria-label="Sampul undangan">
+        <div class="arch">
+          <svg class="bunga" viewBox="0 0 120 50" aria-hidden="true">
+            <g
+              fill="none"
+              stroke="#E899AE"
+              stroke-width="1.4"
+              stroke-linecap="round"
+            >
+              <path d="M10 40 C 35 30, 45 20, 60 22 C 75 20, 85 30, 110 40" />
+              <path d="M30 33 c -4 -8 2 -14 8 -10" />
+              <path d="M90 33 c 4 -8 -2 -14 -8 -10" />
+            </g>
+            <g fill="#E899AE">
+              <circle cx="60" cy="16" r="7" />
+              <circle cx="52" cy="20" r="5" opacity=".7" />
+              <circle cx="68" cy="20" r="5" opacity=".7" />
+            </g>
+            <circle cx="60" cy="16" r="2.5" fill="#FFFFFF" />
+          </svg>
+          <p class="kecil">Undangan pernikahan</p>
+          <h1 class="nama muncul">ababil<span>&amp;</span>nadia</h1>
+          <p class="tanggal">Sabtu, 12 Desember 2026</p>
+          <p class="tamu">
+            Kepada Yth. Bapak/Ibu/Saudara/i<strong id="namaTamu"
+              >Tamu Undangan</strong
+            >
+          </p>
+        </div>
+      </section>
+
+      <!-- Slide 2: Acara -->
+      <section class="slide" aria-label="Waktu dan tempat acara">
+        <div class="arch">
+          <h2>Waktu &amp; Tempat</h2>
+          <div class="acara">
+            <h3>Akad Nikah</h3>
+            <p>Sabtu, 12 Desember 2026<br />Pukul 08.00 – 10.00 WIB</p>
+          </div>
+          <div class="acara">
+            <h3>Resepsi</h3>
+            <p>Sabtu, 12 Desember 2026<br />Pukul 11.00 – 14.00 WIB</p>
+          </div>
+          <p class="lokasi">
+            <strong>Gedung Serbaguna Melati</strong>
+            Jl. Contoh Alamat No. 10, Surabaya
+          </p>
+          <a
+            class="tombol"
+            href="https://maps.google.com/?q=Surabaya"
+            target="_blank"
+            rel="noopener"
+            >Buka di Google Maps</a
+          >
+        </div>
+      </section>
+
+      <!-- Slide 3: Penutup & konfirmasi -->
+      <section class="slide" aria-label="Penutup dan konfirmasi kehadiran">
+        <div class="arch">
+          <h2>Terima Kasih</h2>
+          <p class="doa">
+            Merupakan suatu kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i
+            berkenan hadir dan memberikan doa restu.
+          </p>
+          <a
+            class="tombol"
+            id="tombolRsvp"
+            href="#"
+            target="_blank"
+            rel="noopener"
+            >Konfirmasi via WhatsApp</a
+          >
+          <p class="tanda">
+            Kami yang berbahagia,
+            <span class="nama" style="display: block">ababil &amp; nadia</span>
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <nav class="nav" aria-label="Navigasi slide">
+      <button class="panah" id="sebelum" aria-label="Slide sebelumnya">
+        ‹
+      </button>
+      <div class="titik" id="titik"></div>
+      <button class="panah" id="sesudah" aria-label="Slide berikutnya">
+        ›
+      </button>
+    </nav>
+
+    <script>
+      // ====== UBAH DI SINI ======
+      const NOMOR_WA = "6282336073527"; // nomor WhatsApp tujuan konfirmasi, format 62...
+      // ==========================
+
+      // Nama tamu dari link, contoh: namasitus.netlify.app/?to=Budi+Santoso
+      const params = new URLSearchParams(location.search);
+      const tamu = params.get("to");
+      if (tamu) document.getElementById("namaTamu").textContent = tamu;
+
+      const pesan = `Halo, saya ${tamu || "(nama)"} ingin mengonfirmasi kehadiran di pernikahan Nadia & Fajar.`;
+      document.getElementById("tombolRsvp").href =
+        `https://wa.me/${NOMOR_WA}?text=${encodeURIComponent(pesan)}`;
+
+      // Navigasi slide
+      const track = document.getElementById("track");
+      const slides = track.querySelectorAll(".slide");
+      const titik = document.getElementById("titik");
+      const btnPrev = document.getElementById("sebelum");
+      const btnNext = document.getElementById("sesudah");
+      let aktif = 0;
+
+      slides.forEach((_, i) => {
+        const b = document.createElement("button");
+        b.setAttribute("aria-label", `Ke slide ${i + 1}`);
+        b.addEventListener("click", () => ke(i));
+        titik.appendChild(b);
+      });
+
+      function ke(i) {
+        aktif = Math.max(0, Math.min(slides.length - 1, i));
+        track.style.transform = `translateX(-${aktif * (100 / slides.length)}%)`;
+        titik
+          .querySelectorAll("button")
+          .forEach((b, j) =>
+            b.setAttribute("aria-current", j === aktif ? "true" : "false"),
+          );
+        btnPrev.disabled = aktif === 0;
+        btnNext.disabled = aktif === slides.length - 1;
+        slides.forEach((s, j) => s.toggleAttribute("inert", j !== aktif));
+      }
+
+      btnPrev.addEventListener("click", () => ke(aktif - 1));
+      btnNext.addEventListener("click", () => ke(aktif + 1));
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "ArrowRight") ke(aktif + 1);
+        if (e.key === "ArrowLeft") ke(aktif - 1);
+      });
+
+      // Geser di HP
+      let startX = null;
+      track.addEventListener(
+        "touchstart",
+        (e) => {
+          startX = e.touches[0].clientX;
+        },
+        { passive: true },
+      );
+      track.addEventListener("touchend", (e) => {
+        if (startX === null) return;
+        const dx = e.changedTouches[0].clientX - startX;
+        if (Math.abs(dx) > 50) ke(aktif + (dx < 0 ? 1 : -1));
+        startX = null;
+      });
+
+      ke(0);
+    </script>
+  </body>
+</html>
